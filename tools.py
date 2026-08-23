@@ -1,4 +1,4 @@
-"""Agent 工具定义（DeepSeek function calling 格式）与执行器。"""
+"""Agent 工具定义（OpenAI 兼容 function calling 格式）与执行器。"""
 from data_loader import load_df, schema_text
 from sandbox import run_code
 

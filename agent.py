@@ -1,4 +1,4 @@
-"""Agent 核心循环：DeepSeek function calling + 工具执行 + 流式回复。"""
+"""Agent 核心循环：LLM function calling（OpenAI 兼容接口，默认智谱 GLM）+ 工具执行。"""
 import json
 import os
 

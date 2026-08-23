@@ -11,7 +11,7 @@
 ## 架构
 
 ```
-用户提问 → Gradio UI → Agent 循环 (DeepSeek function calling)
+用户提问 → Gradio UI → Agent 循环 (LLM function calling，OpenAI 兼容接口，默认智谱 GLM)
                           ├─ get_dataset_schema  数据概览
                           └─ run_analysis        受限沙箱执行
                                   ├─ 白名单 import + 裁剪 builtins
@@ -35,14 +35,14 @@
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env      # 填入 DEEPSEEK_API_KEY
+cp .env.example .env      # 填入 LLM_API_KEY（默认智谱 GLM，可换 DeepSeek 等兼容接口）
 # 把数据文件放入 data/ 目录
 python app.py             # 打开 http://127.0.0.1:7860
 ```
 
 ## 部署
 
-适配 Hugging Face Spaces（Gradio SDK）：把 `data/` 换成 Spaces 挂载的数据集，`DEEPSEEK_API_KEY` 配置在 Space Secrets 中。
+适配 Hugging Face Spaces（Gradio SDK）：把 `data/` 换成 Spaces 挂载的数据集，`LLM_API_KEY` 配置在 Space Secrets 中。
 
 ## 示例问题
 

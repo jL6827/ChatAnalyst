@@ -4,7 +4,7 @@ import io
 
 import gradio as gr
 
-from agent import chat as agent_chat
+from agent import chat as agent_chat, get_model
 from data_loader import find_data_file
 
 
@@ -49,7 +49,7 @@ def build_ui() -> gr.Blocks:
             f"""# ChatAnalyst · 对话式数据分析 Agent
 用自然语言提问，Agent 调用工具执行真实 pandas 计算，返回结论与图表。
 
-{data_note} · 模型：DeepSeek · 安全设计：拒答 / 幻觉抑制 / 注入防护（见 README）"""
+{data_note} · 模型：{get_model()} · 安全设计：拒答 / 幻觉抑制 / 注入防护（见 README）"""
         )
         gr.ChatInterface(
             fn=respond,
@@ -64,4 +64,4 @@ def build_ui() -> gr.Blocks:
 
 
 if __name__ == "__main__":
-    build_ui().launch()
+    build_ui().launch(inbrowser=True)
