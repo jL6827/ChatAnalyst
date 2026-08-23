@@ -1,0 +1,10 @@
+gradio>=4.44
+openai>=1.40
+pandas>=2.0
+numpy
+matplotlib
+pillow
+python-dotenv
+scipy
+scikit-learn
+pyreadstat
